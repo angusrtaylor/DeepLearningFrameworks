@@ -76,4 +76,3 @@ model <- mx.model.FeedForward.create(
 )
 
 preds <- predict(model, aperm(x_test))
-preds[10]
