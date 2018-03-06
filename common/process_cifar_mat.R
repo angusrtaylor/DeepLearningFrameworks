@@ -13,12 +13,14 @@ process_cifar_mat <- function() {
   }
   
   x_train <- do.call(rbind, train_data)
+  x_train <- x_train / 255
   y_train <- do.call(rbind, train_labels)
   dim(x_train) <- c(50000, 3, 32, 32)
   
   test <- readMat('./cifar-10-batches-mat/test_batch.mat')
   
   x_test <- test$data
+  x_test <- x_test / 255
   y_test <- test$labels
   dim(x_test) <- c(10000, 3, 32, 32)
   
